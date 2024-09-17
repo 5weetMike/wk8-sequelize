@@ -11,6 +11,6 @@ const sequelize = new Sequelize(process.env.MYSQL_URI, {
 
 sequelize.authenticate();
 
-console("DB connection is working");
+console.log("DB connection is working");
 
 module.exports = sequelize;

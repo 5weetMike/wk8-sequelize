@@ -1,6 +1,13 @@
+const Book = require("./model");
+
 const addBook = async (request, response) => {
     try {
-        response.status(201).json({message: "success"});;
+        const book = await Book.create({
+            title: request.body.title,
+            author: request.body.author,
+            genre: request.body.genre
+        }) 
+        response.status(201).json({message: "success",book: book});
     } catch (error){
         response.status(500).json({message: error.message, error: error})
     }
@@ -18,5 +25,5 @@ const addBook = async (request, response) => {
 
 module.exports ={
     addBook: addBook,
-    
+
 }
