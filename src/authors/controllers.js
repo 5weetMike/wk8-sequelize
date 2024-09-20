@@ -1,6 +1,6 @@
 const Author = require("./model");
 
-const Book = require("./model")
+const Book = require("../books/model")
 
 
 //add books to the database
