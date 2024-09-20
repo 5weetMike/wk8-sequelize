@@ -31,14 +31,14 @@ const getAllBooks = async (request, response) => {
         }catch (error){
             response.status(500).json({message: error.message, error: error})
             }};
-
-// const deleteBookByTitle = async (request, response) => {
-    //     try{
-        //     const deleteBook = await Book.deleteOne({title: request.body.title});
-        //     response.status(201).json({message: "Book deleted", deleteBook: deleteBook});
-    //     } catch (error){
-        //     response.status (500).json ({message: error.message, error: error})
-        //     }};
+//delete by title
+const deleteBookByTitle = async (request, response) => {
+        try{
+            const deleteBook = await Book.destroy({where: {title: request.body.title}});
+            response.status(201).json({message: "Book deleted", deleteBook: deleteBook});
+        } catch (error){
+            response.status (500).json ({message: error.message, error: error})
+            }};
 
 
 //find book by author
@@ -54,7 +54,7 @@ module.exports ={
     addBook: addBook,
     getAllBooks: getAllBooks,
     getByTitle: getByTitle,
-    // deleteBookByTitle: deleteBookByTitle,
+    deleteBookByTitle: deleteBookByTitle,
     bookByAuthor: bookByAuthor
 
 }

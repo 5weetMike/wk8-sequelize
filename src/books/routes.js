@@ -3,16 +3,16 @@ const bookRouter = Router();
 const {addBook} = require("./controllers");
 const {getAllBooks} = require("./controllers");
 const {getByTitle} = require("./controllers");
-// const {deleteBookByTitle} = require("./controllers");
+const {deleteBookByTitle} = require("./controllers");
 const {bookByAuthor} = require("./controllers");
 
 bookRouter.post("/books/addbook", addBook);
 
 bookRouter.get("/books/getallbooks", getAllBooks);
 
-bookRouter.put("/books/getByTitle", getByTitle);
+bookRouter.put("/books/getbytitle", getByTitle);
 
-// bookRouter.delete("/books/deletebookbytitle", deleteBookByTitle);
+bookRouter.delete("/books/deletebookbytitle", deleteBookByTitle);
 
 bookRouter.get("/books/getbyauthor/:author", bookByAuthor);
 
