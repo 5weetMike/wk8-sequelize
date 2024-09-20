@@ -6,7 +6,7 @@ const {getAuthor} = require("./controllers")
 //adds author to DB
 authorRouter.post("/authors/addauthor", addAuthor);
 
-//
-authorRouter.get("/authors/getauthor", getAuthor)
+//get all books by getting author
+authorRouter.get("/authors/getauthor/:name", getAuthor)
 
 module.exports = authorRouter;
